@@ -696,6 +696,7 @@ main.drake-main {
 /* 06 - Left Sidebar */
 .left-sidebar {
   max-width: 485px;
+  position: relative;
   width: 100%;
   border-radius: 30px;
   border: 1px solid #565656;
@@ -706,6 +707,26 @@ main.drake-main {
   padding: 50px;
   z-index: 10;
 }
+.left-sidebar::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 20vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  animation: drop 7s infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
 .drake-main .left-sidebar {
   display: none;
 }
@@ -785,7 +806,7 @@ main.drake-main {
 .hero-section .hero-content > p {
   /* max-width: 480px; */
   margin-bottom: 31px;
-  margin-right: 10px
+  margin-right: 10px;
 }
 .hero-section .hero-content .go-to-project-btn {
   width: 175px;
@@ -2089,5 +2110,3 @@ body .body-overlay {
     top: 0;
   }
 }
-
-
